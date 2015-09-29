@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"os"
 
@@ -13,5 +12,5 @@ func init() {
 	log.SetOutput(os.Stdout)
 }
 func main() {
-	fmt.Println(search.Run("president")
+	search.Run("president")
 }
