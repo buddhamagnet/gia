@@ -5,19 +5,7 @@ import (
 	"sync"
 )
 
-type Matcher struct{}
-
-type Result struct{}
-
-type Feed struct {
-	Type string
-}
-
 var matchers = make(map[string]Matcher)
-
-func RetrieveFeeds() ([]*Feed, error) {
-	return nil, nil
-}
 
 func Match(matcher Matcher, feed *Feed, term string, results chan *Result) {}
 
