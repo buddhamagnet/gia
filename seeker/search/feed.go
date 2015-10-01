@@ -2,6 +2,7 @@ package search
 
 import (
 	"encoding/json"
+	"fmt"
 	"os"
 )
 
@@ -11,6 +12,10 @@ type Feed struct {
 	Name string `json:"site"`
 	URI  string `json:"link"`
 	Type string `json:"type"`
+}
+
+func (f Feed) String() string {
+	return fmt.Sprintf("feed type: %s site: %s URI: %s\n", f.Type, f.Name, f.URI)
 }
 
 func RetrieveFeeds() ([]*Feed, error) {

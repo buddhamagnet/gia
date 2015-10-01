@@ -11,6 +11,13 @@ import (
 func init() {
 	log.SetOutput(os.Stdout)
 }
+
 func main() {
-	search.Run("president")
+	var term = "president"
+
+	if len(os.Args) == 2 {
+		term = os.Args[1]
+	}
+
+	search.Run(term)
 }
