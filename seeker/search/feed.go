@@ -15,7 +15,7 @@ type Feed struct {
 }
 
 func (f Feed) String() string {
-	return fmt.Sprintf("feed type: %s site: %s URI: %s\n", f.Type, f.Name, f.URI)
+	return fmt.Sprintf("feed type: %s site: %s URI: %s", f.Type, f.Name, f.URI)
 }
 
 func RetrieveFeeds() ([]*Feed, error) {
