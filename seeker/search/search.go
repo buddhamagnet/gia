@@ -7,9 +7,13 @@ import (
 
 var matchers = make(map[string]Matcher)
 
-func Match(matcher Matcher, feed *Feed, term string, results chan *Result) {}
-
-func Display(chan *Result) {}
+func Register(feedType string, matcher Matcher) {
+	if _, exists := matchers[feedType]; exists {
+		log.Fatalln(feedType, "matcher already registered")
+	}
+	log.Println(feedType, "matcher successfully registered")
+	matchers[feedType] = matcher
+}
 
 func Run(term string) {
 	// Get the feeds.

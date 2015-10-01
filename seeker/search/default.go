@@ -10,7 +10,3 @@ func init() {
 func (d defaultMatcher) Search(feed *Feed, term string) ([]*Result, error) {
 	return nil, nil
 }
-
-func Register(label string, matcher Matcher) {
-	matchers[label] = matcher
-}
