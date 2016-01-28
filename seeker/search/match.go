@@ -3,6 +3,7 @@ package search
 import (
 	"fmt"
 	"log"
+	"time"
 )
 
 type Result struct {
@@ -27,13 +28,12 @@ func Match(matcher Matcher, feed *Feed, term string, results chan<- *Result) {
 	for _, result := range resultSet {
 		results <- result
 	}
-	if len(results) == 0 {
-		fmt.Printf("no results found at %s\n", feed.Name)
-	}
+
 }
 
 func Display(results chan *Result) {
 	for result := range results {
 		fmt.Printf("%s", result)
+		time.Sleep(1 * time.Second)
 	}
 }
